@@ -1,0 +1,31 @@
+# hallmaster-ical-proxy Configuration File
+
+hallmaster:
+  # The ID of your hall in Hallmaster.
+  hall_id: 00000
+
+cron:
+  # The cron schedule for the iCal feed to be updated.
+  # The format is the same as a standard cron schedule.
+  # The default is every 60 minutes.
+  sync_schedule: "0 * * * *"
+
+# -- Room Definitions --
+# Rooms are given both a slug, and a human-readable name.
+# Hallmaster provides the human-readable name, but this isn't useful
+# in a REST environment. hallmaster-ical-proxy will use the human-readable name
+# in it's iCal outputs.
+# The format used is desgined for future addition, but currently only needs a name.
+
+# The human-readable name will be used to identify events in the HM iCal feed.
+# Should a new room be located, a warning will be flagged in the log.
+
+# Format:
+# slug:
+  # name: "Human Readable Name"
+rooms:
+  village_hall:
+    name: "Village Hall"
+  meeting_room:
+    name: "Meeting Room"
+  

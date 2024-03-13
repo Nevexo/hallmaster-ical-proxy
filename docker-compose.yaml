@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  hallmaster_ical_proxy:
+    container_name: hallmaster_ical_proxy
+    build: .
+    environment:
+      - LISTEN_PORT=3000
+    volumes:
+      - /usr/share/hallmaster_ical_proxy/config.yaml:/app/config.yaml
+    ports:
+      - "3000:3000"
