@@ -31,7 +31,6 @@ metric_events.on('metrics', (metric) => {
 
 // GET /metrics (downstream metrics)
 router.get('/', (req, res) => {
-  logger.info(`metrics: Request for metrics`);
   res.set('Content-Type', 'text/plain');
 
   let response = `# hallmaster-ical-proxy metrics\n`;
