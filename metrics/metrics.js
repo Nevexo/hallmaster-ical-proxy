@@ -23,6 +23,7 @@ metric_events.on('metrics', (metric) => {
 
   if (metric.metric_name == "hallmaster_last_fetch_time") {
     static_metrics["last_fetch_timestamp"] = new Date(metric.metric_value).getTime();
+    return;
   }
 
   adhoc_metrics[metric.metric_name] = metric.metric_value;
